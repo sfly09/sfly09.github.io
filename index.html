@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>sfly-弋人何慕</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/firework-effect.css">
+</head>
+<body>
+    <!-- 全屏背景和语录部分 -->
+    <section class="hero">
+        <div class="quote-container">
+            <p class="riye">日夜两盏灯，春秋一场梦</p>
+            <p class="mengxiang">没有梦想，只会做梦</p>
+        </div>
+        <div class="scroll-down">↓ 内容在下面 ↓</div>
+    </section>
+
+    <!-- 主要内容区域 -->
+    <div class="zhuyao-neirong" id="neirong">
+        <!-- 左侧边栏 -->
+        <div class="zuoce-lan">
+            <!-- 个人简介卡片 -->
+            <div class="jianjie-ka">
+                <div class="touxiang-container">
+                    <img src="https://img.picui.cn/free/2025/04/21/6805abf7efc66.jpg" alt="头像" class="touxiang">
+                </div>
+                <h2>sfly</h2>
+                <p>我是，弋人何慕</p>
+                
+                <!-- 社交链接 -->
+                <div class="shejiao-lianjie">
+                    <div class="weixin-container">
+                        <a class="shejiao-tubiao" >
+                            <img src="https://img.picui.cn/free/2025/04/25/680a6bfabbe60.png" alt="微信" style="color: blue; text-decoration: underline;">
+                        </a>
+                        <img class="erweima" src="https://img.picui.cn/free/2025/04/25/680a6bfac79c2.jpg" alt="好友码加载中">
+                    </div>
+                    <a href="tencent://message/?uin=3498610023" target="_blank" class="shejiao-tubiao">
+                        <img src="https://img.picui.cn/free/2025/04/25/680a6bfaa2dfd.png" alt="QQ">
+                    </a>
+                    <a href="https://space.bilibili.com/2048309596" target="_blank" class="shejiao-tubiao">
+                        <img src="https://img.picui.cn/free/2025/04/25/680a6bfaa2510.png" alt="哔哩哔哩">
+                    </a>
+                    <a href="https://github.com/sfly09" target="_blank" class="shejiao-tubiao">
+                        <img src="https://img.picui.cn/free/2025/04/25/680a6bfaa2502.png" alt="GitHub">
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 可以在这里添加更多左侧内容，如导航菜单等 -->
+            <div class="daohang">
+                <a href="index.html#neirong" class="daohang-xiangmu">首页</a>
+                <a href="guanyu.html" class="daohang-xiangmu">关于</a>
+                <a href="touwei.html" class="daohang-xiangmu">投喂</a>
+            </div>
+
+            <!-- 域名出售链接 -->
+            <div class="yuming-lianjie">
+                <a href="lilys.top.html" target="_blank" class="yuming-fangkuai">
+                    <div class="yuming">lilys.top</div>
+                    <div class="yuming-zhuangtai">域名出售</div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- 右侧内容区 -->
+        <div class="youce-neirong">
+            <!-- 这里放置博客内容 -->
+            <div class="boke-neirong">
+                <h2>我是标题</h2>
+                <p>这个页面就这样了，不会更新内容，我的博客请访问<a href="https://sfly.top" target="_blank">sfly</a></p>
+                <p>现在这个页面是我初学搭建网站用来练手的，纯html静态网站，将不会用来发文章，发文章在<a href="https://sfly.top" target="_blank">sfly</a></p>
+                <p>如果有啥好玩的有趣的东西可以联系我放在下方空白处n(*≧▽≦*)n</p>
+            </div>
+
+            <!-- 版权方块 -->
+            <div class="banquan-fangkuai">
+                <p>© <span id="current-year"></span> <a href="https://github.com/sfly09" target="_blank" class="banquan-tiaozhuan">sfly</a> 版权所有</p>
+                <p>本站由<a href="https://github.com/sfly09" target="_blank" class="banquan-tiaozhuan">sfly</a>设计和维护，已稳定运行<span id="runtime"></span></p>
+                <p>本站仓库地址：<a href="https://github.com/sfly09/sfly09.github.io" target="_blank">sfly09.github.io</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 检查是否是第一次访问
+        function isFirstVisit() {
+            if (sessionStorage.getItem('visited')) {
+                return false;
+            } else {
+                // 设置访问标记
+                sessionStorage.setItem('visited', 'true');
+                return true;
+            }
+        }
+
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取当前页面URL
+            const currentUrl = window.location.href;
+            
+            // 检查是否包含锚点
+            if (window.location.hash) {
+                // 如果是首页且是第一次访问，不执行滚动
+                if (currentUrl.includes('index.html') && isFirstVisit()) {
+                    // 第一次访问首页，不滚动
+                    return;
+                }
+                
+                // 其他情况，滚动到指定位置
+                const targetElement = document.querySelector(window.location.hash);
+                if (targetElement) {
+                    targetElement.scrollIntoView();
+                }
+            }
+        });
+    </script>
+
+    
+    <script src="./js/firework-effect.js"></script>
+    <script src="./js/dazi-xiaoguo.js"></script>
+    <script src="./js/nianfen.js"></script>
+</body>
+</html>
